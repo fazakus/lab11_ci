@@ -46,3 +46,66 @@ in APPPATH\Controllers\Home.php on line 10.
 CRITICAL - 2022-06-05 03:12:30 --> Cannot redeclare App\Controllers\Page::about()
 in APPPATH\Controllers\page.php on line 21.
  1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2022-06-05 04:46:22 --> Invalid file: article.php
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('article.php')
+ 2 SYSTEMPATH\Common.php(1135): CodeIgniter\View\View->render('article', [], true)
+ 3 APPPATH\Controllers\page.php(30): view('article', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\Page->article()
+ 5 SYSTEMPATH\CodeIgniter.php(468): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Page))
+ 6 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-06-05 04:47:45 --> Invalid file: article.php
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('article.php')
+ 2 SYSTEMPATH\Common.php(1135): CodeIgniter\View\View->render('article', [], true)
+ 3 APPPATH\Controllers\page.php(30): view('article', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\Page->article()
+ 5 SYSTEMPATH\CodeIgniter.php(468): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Page))
+ 6 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-06-05 04:48:34 --> Invalid file: article.php
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('article.php')
+ 2 SYSTEMPATH\Common.php(1135): CodeIgniter\View\View->render('article', [], true)
+ 3 APPPATH\Controllers\page.php(30): view('article', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\Page->article()
+ 5 SYSTEMPATH\CodeIgniter.php(468): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Page))
+ 6 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-06-05 04:48:49 --> Invalid file: article.php
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('article.php')
+ 2 SYSTEMPATH\Common.php(1135): CodeIgniter\View\View->render('article', [], true)
+ 3 APPPATH\Controllers\page.php(30): view('article', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\Page->article()
+ 5 SYSTEMPATH\CodeIgniter.php(468): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Page))
+ 6 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-06-05 04:55:46 --> Invalid file: article.php
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('article.php')
+ 2 SYSTEMPATH\Common.php(1135): CodeIgniter\View\View->render('article', [], true)
+ 3 APPPATH\Controllers\page.php(30): view('article', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\Page->article()
+ 5 SYSTEMPATH\CodeIgniter.php(468): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Page))
+ 6 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-06-05 05:02:30 --> Invalid file: article.php
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('article.php')
+ 2 SYSTEMPATH\Common.php(1135): CodeIgniter\View\View->render('article', [], true)
+ 3 APPPATH\Controllers\page.php(29): view('article', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\Page->article()
+ 5 SYSTEMPATH\CodeIgniter.php(468): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Page))
+ 6 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-06-05 05:04:26 --> Invalid file: article.php
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('article.php')
+ 2 SYSTEMPATH\Common.php(1135): CodeIgniter\View\View->render('article', [], true)
+ 3 APPPATH\Controllers\page.php(29): view('article', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\Page->article()
+ 5 SYSTEMPATH\CodeIgniter.php(468): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Page))
+ 6 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()

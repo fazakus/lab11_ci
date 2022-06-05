@@ -16,7 +16,6 @@ class Page extends BaseController
             'content' => 'Ini adalah Halaman Contact Us.'
         ]);
     }
-
     public function faqs() 
     { 
         echo "Ini halaman FAQ"; 
@@ -24,5 +23,11 @@ class Page extends BaseController
     public function tos()
     {
         echo "Ini Halaman Term of Services";
+    }
+    public function article(){
+        return view('article', [
+            'title' => 'Halaman Article',
+            'content' => 'Ini adalah Halaman Article'
+        ]);
     }
 }

@@ -48,7 +48,7 @@
                         </li>
                         <li class="nav-item" style="padding-right: 15px;">
                             <a class="nav-item">
-                                <a href="artikel" class="nav-link">Artikel</a>
+                                <a href="article" class="nav-link">Article</a>
                             </a>
                         </li>
                         <li class="nav-item" style="padding-right: 15px;">
