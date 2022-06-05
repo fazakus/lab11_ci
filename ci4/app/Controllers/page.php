@@ -9,10 +9,14 @@ class Page extends BaseController
             'content' => 'Ini adalah Halaman About yang menjelaskan tentang isi halaman, dibuat melalui Views'
         ]);
     } 
-    public function contact() 
+    public function contact()
     { 
-        echo "Ini halaman Contact"; 
-    } 
+        return view('contact', [
+            'title' => 'Contact Us',
+            'content' => 'Ini adalah Halaman Contact Us.'
+        ]);
+    }
+
     public function faqs() 
     { 
         echo "Ini halaman FAQ"; 
