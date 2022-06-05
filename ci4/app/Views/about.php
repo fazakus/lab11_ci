@@ -1,16 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?= $title; ?></title>
-</head>
-<body>
-    
-    <h1><?= $title; ?></h1>
+<?= $this->include('template/header'); ?>
+
+<div class="col-sm-8">
+    <h1 style="font-weight: bold;"><?= $title; ?></h1>
         <hr>
     <p><?= $content; ?></p>
-
-</body>
-</html>
+</div>
+<?= $this->include('template/footer'); ?>
