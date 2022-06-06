@@ -14,7 +14,7 @@ Berikut beberapa ekstensi yang perlu diaktifkan:<br>
 • <b>php-mysqlnd</b> native driver untuk MySQL;<br>
 • <b>php-xml</b> ekstension untuk bekerja dengan XML;<br>
 • <b>php-intl</b> ekstensi untuk membuat aplikasi multibahasa;<br>
-• <b>libcurl (opsional)</b>, jika ingin pakai Curl.<br>
+• <b>libcurl (opsional)</b>, jika ingin pakai Curl.<br><br>
 Pertama saya aktifkan ekstensi tersebut pada <b>XAMPP Control Panel</b>, pada bagian <b>Apache</b>, klik <b>Config > PHP(php.ini)</b>.<br>
 ![XAMPP](Pic/xampp.png)<br>
 
@@ -62,7 +62,7 @@ php spark routes
 ![Routes](Pic/routes.png)<br>
 
 Kemudian saya cek di web, untuk about tampilannya seperti berikut :<br>
-![About404](Pic/404about.png)<br>
+![About404](Pic/about1.png)<br>
 
 ### Membuat Controller
 Saya membuat file baru dengan nama <b>page.php</b> pada direktori <b>Controller</b> dengan syntax berikut :<br>
@@ -85,3 +85,179 @@ class Page extends BaseController
     } 
 }
 ```
+
+Kemudian saya buka kembali untuk halaman aboutnya.<br>
+![about1](Pic/about2.png)<br>
+
+### Membuat Auto Routing
+Secara default fitur autoroute pada Codeiginiter sudah aktif. Untuk mengubah status autoroute dapat mengubah nilai variabelnya. Disini saya kan menambahkan pada route.
+```
+$routes->setAutoRoute(true);
+```
+Kemudian saya tambahkan method baru pada Controller<br>
+```
+    public function tos()
+    {
+        echo "Ini Halaman Term of Services";
+    }
+```
+Tampilannya<br>
+![TOS](Pic/tos.png)<br>
+
+### Membuat View
+Selanjutnya saya akan membuat view supaya tampilan web lebih menarik. Disini saya membuat file baru yaitu <b>about.php</b> pada direktory <b>app/view</b>, dengan syntax berikut :<br>
+```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><?= $title; ?></title>
+</head>
+<body>
+    
+    <h1><?= $title; ?></h1>
+        <hr>
+    <p><?= $content; ?></p>
+
+</body>
+</html>
+```
+Setelah itu rubah method about pada class Controller Page menjadi berikut :<br>
+```
+    public function about(){
+        return view('about', [
+            'title' => 'Halaman About',
+            'content' => 'Ini adalah Halaman About yang menjelaskan tentang isi halaman, dibuat melalui Views'
+        ]);
+    }
+```
+Tampilannya menjadi seperti berikut :<br>
+![About2](Pic/about3.png)
+
+### Membuat Layout Web dengan CSS
+Disini saya akan lebih merubah tampilan Website dengan menambahkan CSS. Untuk menambahkan CSS bisa diletakkan pada folder public. Tapi disini untuk CSS saya jadikan satu di dalamnya. Disini saya membuat folder baru dengan nama <b>template</b> dan membuat beberapa bagian template dibagi menjadi dua, yaitu <b>Header</b> dan <b>Footer</b>.
+
+Pertama saya akan membuat file header.php dengan syntax berikut :<br>
+```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><?= $title; ?></title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"></script>
+    <style rel="stylesheet">
+    * {
+    margin: 0;
+    padding: 0;
+    }
+    body {
+        line-height:1;
+        font-size:100%;
+        font-family:'Open Sans', sans-serif;
+        color:#5a5a5a;
+    }
+    /* header */
+    header {
+        padding: 20px;
+    }
+    header h1 {
+        margin: 20px 10px;
+        color: #b5b5b5;
+    }
+    </style>
+    
+</head>
+<body>
+
+<div class="container" style="box-shadow: 0 0 1em #cccccc">
+    <div class="row">
+        <header>
+            <h1>Layout Sederhana</h1>
+        </header>
+    </div>
+    <div class="row">
+        <nav class="navbar navbar-collapse navbar-expand navbar-dark bg-primary">
+            <div class="container-fluid">
+                <div class="collapse navbar-collapse">
+                    <ul class="navbar-nav" style="font-size: 14px; font-weight: bold;">
+                        <li class="nav-item" style="padding-right: 15px;">
+                            <a class="nav-link active" href="/">Home</a>
+                        </li>
+                        <li class="nav-item" style="padding-right: 15px;">
+                            <a class="nav-item">
+                                <a href="article" class="nav-link">Article</a>
+                            </a>
+                        </li>
+                        <li class="nav-item" style="padding-right: 15px;">
+                            <a class="nav-item">
+                                <a href="about" class="nav-link">About</a>
+                            </a>
+                        </li>
+                        <li class="nav-item" style="padding-right: 15px;">
+                            <a class="nav-item">
+                                <a href="contact" class="nav-link">Contact</a>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div> <br>
+    <div class="row">
+```
+
+Kemudian saya membuat file footer dengan syntax berikut :<br>
+```
+<div class="col col-4">
+            <ul class="list-group">
+                <li class="list-group-item active fw-bolder" aria-current="true">Widget Header</li>
+                <li class="list-group-item">Widget Link</li>
+                <li class="list-group-item">Widget Link</li>
+            </ul>
+
+            <br><br>
+
+            <div class="card mb-3" style="max-width: 18rem;">
+                <div class="card-header text-white bg-primary fw-bolder">Widget Text</div>
+                <div class="card-body">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum quidem vitae mollitia suscipit dolores non deleniti, quis autem reiciendis eos, labore iure nam facilis minus id laborum maiores laboriosam ipsam?
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="card text-white bg-dark mb-1">
+                <div class="card-body">
+                    &copy; 2022 - Universitas Pelita Bangsa
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
+```
+
+Setelah itu saya akan mencobanya pada halaman about. Disini saya akan mengedit halaman about.<br>
+```
+<?= $this->include('template/header'); ?>
+
+<div class="col-sm-8">
+    <h1 style="font-weight: bold;"><?= $title; ?></h1>
+        <hr>
+    <p><?= $content; ?></p>
+</div>
+<?= $this->include('template/footer'); ?>
+```
+
+Tampilannya menjadi seperti berikut :<br>
+![About3](Pic/about4.png)<br>
+
