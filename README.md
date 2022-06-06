@@ -54,8 +54,34 @@ $routes->get('/about', 'Page::about');
 $routes->get('/contact', 'Page::contact'); 
 $routes->get('/faqs', 'Page::faqs');
 ```
+
 Untuk cek apakah route yang ditambahkan sudah benar, bisa di cek melalui CLI dan jalankan perintah berikut :<br>
 ```
 php spark routes
 ```
 ![Routes](Pic/routes.png)<br>
+
+Kemudian saya cek di web, untuk about tampilannya seperti berikut :<br>
+![About404](Pic/404about.png)<br>
+
+### Membuat Controller
+Saya membuat file baru dengan nama <b>page.php</b> pada direktori <b>Controller</b> dengan syntax berikut :<br>
+```
+<?php 
+namespace App\Controllers; 
+class Page extends BaseController 
+{ 
+    public function about() 
+    { 
+        echo "Ini halaman About"; 
+    } 
+    public function contact() 
+    { 
+        echo "Ini halaman Contact"; 
+    } 
+    public function faqs() 
+    { 
+        echo "Ini halaman FAQ"; 
+    } 
+}
+```
