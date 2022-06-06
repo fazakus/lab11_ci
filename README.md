@@ -261,3 +261,15 @@ Setelah itu saya akan mencobanya pada halaman about. Disini saya akan mengedit h
 Tampilannya menjadi seperti berikut :<br>
 ![About3](Pic/about4.png)<br>
 
+### Pertanyaan dan Tugas
+Disini saya mendapatkan pertanyaan dan tugas sebagai berikut :<br>
+![Tugas](Pic/tugas.png)<br>
+
+### Jawaban
+
+Disini saya akan melengkapi dengan membuat halaman Article dan Contact Us, karena halaman about sudah dibuat.<br>
+
+Pertama saya membuat halaman Article, berikut tampilannya :<br>
+![Article](Pic/article.png)<br><br>
+Kemudian saya membuat halaman Contact Us, berikut tampilannya : <br>
+![ContactUs](Pic/contactus.png)<br><br>
