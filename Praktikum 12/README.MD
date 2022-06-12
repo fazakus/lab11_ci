@@ -53,3 +53,47 @@ class ArtikelModel extends Model
 ```
 
 ### Membuat Controller
+Selanjutnya saya akan membuat controller dengan file baru pada direktori <b>app/Controllers</b> dengan nama <b>Artikel.php</b> dengan syntax berikut :<br>
+```
+<?php
+namespace App\Controllers;
+use App\Models\ArtikelModel;
+class Artikel extends BaseController
+{
+    public function index()
+    { 
+        $title = 'Daftar Artikel';
+        $model = new ArtikelModel();
+        $artikel = $model->findAll();
+        return view('artikel/index', compact('artikel', 'title'));
+    }
+}
+```
+
+### Membuat View
+Setelah selesai membuat Controller, saya akan membuat file baru dengan nama <b>index.php</b> pada direktori <b>app/views</b> dengan syntax berikut :<br>
+```
+<?= $this->include('template/header'); ?>
+
+<?php if($artikel): foreach($artikel as $row): ?>
+<div class="col-sm-8">
+    <article class="entry">
+        <h2><a href="<?= base_url('/artikel/' . $row['slug']);?>"> <?=$row['judul']; ?></a></h2>
+        <img src="<?= base_url('/gambar/' . $row['gambar']);?>" alt="<?=$row['judul']; ?>">
+        <p><br><?= substr($row['isi'], 0, 200); ?></p>
+    </article>
+    <hr class="divider" />
+</div>
+
+<?php endforeach; else: ?>
+<div class="col-sm-8">
+    <article class="entry">
+        <h2>Belum ada data.</h2>
+    </article>
+</div>
+<?php endif; ?>
+
+<?= $this->include('template/footer'); ?>
+```
+Kemudian saya akan lihat di browser dengan mengakses url artikel tersebut.<br>
+![View](Pic/nodata.png)<br>
