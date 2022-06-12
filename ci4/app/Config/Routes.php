@@ -41,6 +41,7 @@ $routes->get('/contact', 'Page::contact');
 $routes->get('/faqs', 'Page::faqs');
 $routes->get('/article', 'Page::article');
 $routes->setAutoRoute(true);
+$routes->get('/artikel/(:any)', 'Artikel::view/$1');
 
 /*
  * --------------------------------------------------------------------

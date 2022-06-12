@@ -1,0 +1,22 @@
+CRITICAL - 2022-06-12 09:35:02 --> Undefined variable $row
+in APPPATH\Views\Artikel\detail.php on line 7.
+ 1 APPPATH\Views\Artikel\detail.php(7): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $row', 'APPPATH\\Views\\Artikel\\detail.php', 7)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\Artikel\\detail.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1135): CodeIgniter\View\View->render('artikel/detail', [], true)
+ 5 APPPATH\Controllers\Artikel.php(26): view('artikel/detail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\Artikel->view('artikel-pertama')
+ 7 SYSTEMPATH\CodeIgniter.php(468): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Artikel))
+ 8 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-06-12 09:36:05 --> Undefined variable $row
+in APPPATH\Views\Artikel\detail.php on line 7.
+ 1 APPPATH\Views\Artikel\detail.php(7): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $row', 'APPPATH\\Views\\Artikel\\detail.php', 7)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\Artikel\\detail.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1135): CodeIgniter\View\View->render('artikel/detail', [], true)
+ 5 APPPATH\Controllers\Artikel.php(26): view('artikel/detail', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\Artikel->view('artikel-kedua')
+ 7 SYSTEMPATH\CodeIgniter.php(468): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Artikel))
+ 8 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
