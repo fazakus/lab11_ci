@@ -97,3 +97,57 @@ Setelah selesai membuat Controller, saya akan membuat file baru dengan nama <b>i
 ```
 Kemudian saya akan lihat di browser dengan mengakses url artikel tersebut.<br>
 ![View](Pic/nodata.png)<br>
+
+### Memasukkan Data
+Disini saya mencoba memasukkan data ke database
+```
+INSERT INTO artikel (judul, isi, slug) VALUE ('Artikel pertama', 'Lorem Ipsum adalah contoh teks atau dummy dalam industri percetakan dan penataan huruf atau typesetting. Lorem Ipsum telah menjadi standar contoh teks sejak tahun 1500an, saat seorang tukang cetak yang tidak dikenal mengambil sebuah kumpulan teks dan mengacaknya untuk menjadi sebuah buku contoh huruf.', 'artikel-pertama'), ('Artikel kedua', 'Tidak seperti anggapan banyak orang, Lorem Ipsum bukanlah teks-teks yang diacak. Ia berakar dari sebuah naskah sastra latin klasik dari era 45 sebelum masehi, hingga bisa dipastikan usianya telah mencapai lebih dari 2000 tahun.', 'artikel-kedua');
+```
+Berikut tampilannya :<br>
+![inputDB](Pic/insertartikel.png) <br>
+
+Setelah itu saya refresh halamannya, tampilannya menjadi seperti berikut :<br>
+![ArtikelDB](Pic/artikel1.png)
+
+### Membuat Tampilan Artikel Detail
+Saya ingin membuat tampilan pada saat judul berita di klik maka akan diarahkan ke halaman yang berbeda. Disini saya mambahkan fungsi baru pada Controller Artikel dengan nama view().
+```
+public function view($slug)
+    {
+        $model = new ArtikelModel();
+        $artikel = $model->where([
+            'slug' => $slug
+            ])->first();
+            
+        // Menampilkan error apabila data tidak ada.
+        if (!$artikel)
+        { 
+            throw PageNotFoundException::forPageNotFound();
+        }
+        $title = $artikel['judul'];
+        return view('artikel/detail', compact('artikel', 'title'));
+    }
+```
+
+### Membuat View Detail
+Setelah itu saya membuat view detail dengan membuat file baru dengan nama detail.php pada direktori app/views/artikel/<br>
+```
+<?= $this->include('template/header'); ?>
+
+<div class="col-sm-8">
+    <article class="entry">
+        <h2><?= $artikel['judul']; ?></h2>
+        <img src="<?= base_url('/gambar/' . $artikel['gambar']);?>" alt="<?= $artikel['judul']; ?>">
+        <p><?= $artikel ['isi']; ?></p>
+    </article>
+</div>
+
+<?= $this->include('template/footer'); ?>
+```
+
+Lalu saya tambahkan untuk routingnya<br>
+```
+$routes->get('/artikel/(:any)', 'Artikel::view/$1');
+```
+Hasilnya <br>
+![Artikel2](Pic/artikel2.png)

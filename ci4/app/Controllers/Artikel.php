@@ -25,5 +25,12 @@ class Artikel extends BaseController
         $title = $artikel['judul'];
         return view('artikel/detail', compact('artikel', 'title'));
     }
+    public function admin_index() 
+    { 
+        $title = 'Daftar Artikel'; 
+        $model = new ArtikelModel(); 
+        $artikel = $model->findAll(); 
+        return view('artikel/admin_index', compact('artikel', 'title')); 
+    }
 
 }
