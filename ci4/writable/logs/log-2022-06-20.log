@@ -1,0 +1,6 @@
+CRITICAL - 2022-06-20 20:22:27 --> Class "App\Controllers\PageNotFoundException" not found
+in APPPATH\Controllers\Artikel.php on line 23.
+ 1 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\Artikel->view('edit', '2')
+ 2 SYSTEMPATH\CodeIgniter.php(468): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Artikel))
+ 3 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
